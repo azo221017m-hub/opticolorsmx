@@ -9,7 +9,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     message: '',
-    appointmentType: 'Primera cita'
+    appointmentType: 'Examen Visual'
   })
 
   const handleChange = (e) => {
@@ -34,7 +34,7 @@ function Contact() {
     window.open(whatsappUrl, '_blank')
     
     // Reset form
-    setFormData({ name: '', message: '', appointmentType: 'Primera cita' })
+    setFormData({ name: '', message: '', appointmentType: 'Examen Visual' })
   }
 
   const contactInfo = [
@@ -174,7 +174,7 @@ function Contact() {
               <div className="form-group">
                 <label htmlFor="appointmentType">Tipo de Cita</label>
                 <div className="appointment-selector">
-                  {['Primera cita', 'Cita de seguimiento', 'Reservar espacio'].map((type) => (
+                  {['Examen Visual', 'Graduación Computarizada', 'Compra de Lentes', 'Compra de Lentes de Contacto', 'Visita General'].map((type) => (
                     <motion.label
                       key={type}
                       className={`appointment-option ${formData.appointmentType === type ? 'selected' : ''}`}
