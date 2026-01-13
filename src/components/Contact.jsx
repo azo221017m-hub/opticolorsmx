@@ -8,9 +8,8 @@ function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
-    message: ''
+    message: '',
+    appointmentType: 'Primera cita'
   })
 
   const handleChange = (e) => {
@@ -22,10 +21,20 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Form submission logic would go here
-    console.log('Form submitted:', formData)
-    alert('¡Gracias por contactarnos! Te responderemos pronto.')
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    
+    // Send form data via WhatsApp
+    const phoneNumber = '5215515037150' // WhatsApp number (add 521 for Mexico format)
+    const message = `*Nuevo mensaje de contacto*
+    
+📋 *Tipo de Cita:* ${formData.appointmentType}
+👤 *Nombre:* ${formData.name}
+ *Mensaje:* ${formData.message}`
+    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+    
+    // Reset form
+    setFormData({ name: '', message: '', appointmentType: 'Primera cita' })
   }
 
   const contactInfo = [
@@ -33,19 +42,14 @@ function Contact() {
       icon: '📍',
       title: 'Ubicación',
       info: 'Ciudad de México, México',
-      detail: 'Av. Principal #123, Col. Centro'
+      detail: 'Calle Tacuba 37 cuarto piso consultorio 413-A',
+      isMap: true
     },
     {
       icon: '📞',
       title: 'Teléfono',
-      info: '+52 55 1234 5678',
+      info: '55 1503 7150',
       detail: 'Lun - Vie: 9:00 - 18:00'
-    },
-    {
-      icon: '✉️',
-      title: 'Email',
-      info: 'contacto@opticolorsmx.com',
-      detail: 'Respuesta en 24 horas'
     }
   ]
 
@@ -85,6 +89,20 @@ function Contact() {
                   <h3>{item.title}</h3>
                   <p className="info-main">{item.info}</p>
                   <p className="info-detail">{item.detail}</p>
+                  {item.isMap && (
+                    <div className="map-container" style={{ marginTop: '15px', borderRadius: '10px', overflow: 'hidden', height: '200px' }}>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5677!2d-99.1405!3d19.4358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92c5e5e5e5e%3A0x5e5e5e5e5e5e5e5e!2sCalle%20Tacuba%2037%2C%20Centro%20Hist%C3%B3rico%2C%20Cuauht%C3%A9moc%2C%2006000%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1234567890"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Ubicación Opticolorsmx"
+                      ></iframe>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -154,28 +172,26 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Correo Electrónico</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="correo@ejemplo.com"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="phone">Teléfono</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+52 55 1234 5678"
-                />
+                <label htmlFor="appointmentType">Tipo de Cita</label>
+                <div className="appointment-selector">
+                  {['Primera cita', 'Cita de seguimiento', 'Reservar espacio'].map((type) => (
+                    <motion.label
+                      key={type}
+                      className={`appointment-option ${formData.appointmentType === type ? 'selected' : ''}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <input
+                        type="radio"
+                        name="appointmentType"
+                        value={type}
+                        checked={formData.appointmentType === type}
+                        onChange={handleChange}
+                      />
+                      <span className="appointment-label">{type}</span>
+                    </motion.label>
+                  ))}
+                </div>
               </div>
 
               <div className="form-group">
@@ -197,7 +213,7 @@ function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Enviar Mensaje
+                Enviar WhatsApp
               </motion.button>
             </form>
           </motion.div>

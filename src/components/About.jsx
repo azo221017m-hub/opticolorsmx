@@ -1,11 +1,42 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import './About.css'
 
 function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  // Carousel state
+  const [currentImage, setCurrentImage] = useState(0)
+  const images = [
+    '/opticolorsimg1.jpeg',
+    '/opticolorsimg2.jpeg',
+    '/opticolorsimg3.jpeg',
+    '/opticolorsimg4.jpeg',
+    '/opticolorsimg5.jpeg'
+  ]
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 4000) // Change image every 4 seconds
+
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const goToImage = (index) => {
+    setCurrentImage(index)
+  }
 
   const features = [
     {
@@ -42,31 +73,16 @@ function About() {
           >
             <h2>Sobre Nosotros</h2>
             <p className="about-intro">
-              Con más de 15 años de experiencia, Opticolorsmx se ha consolidado como 
-              un laboratorio óptico líder en México, comprometido con la excelencia 
-              y la innovación tecnológica.
+              Con más de 17 años de experiencia, Opticolors es una empresa mexicana que se ha consolidado como 
+              un laboratorio óptico de confianza, comprometido con la excelencia 
+              y la innovación tecnológica para cuidar la salud visual de todas y todos los mexicanos.
             </p>
             <p className="about-description">
               Nuestro equipo de expertos utiliza tecnología de punta para garantizar 
               que cada lente sea fabricado con la máxima precisión y calidad. Desde 
-              lentes progresivos hasta tratamientos especializados, cada producto 
-              pasa por rigurosos controles de calidad.
+              lentes progresivos hasta servicios especializados, cada producto 
+              pasa por un control de calidad.
             </p>
-
-            <div className="about-stats-inline">
-              <div className="stat-inline">
-                <div className="stat-inline-number">15+</div>
-                <div className="stat-inline-text">Años</div>
-              </div>
-              <div className="stat-inline">
-                <div className="stat-inline-number">50K+</div>
-                <div className="stat-inline-text">Clientes</div>
-              </div>
-              <div className="stat-inline">
-                <div className="stat-inline-number">99%</div>
-                <div className="stat-inline-text">Satisfacción</div>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
@@ -101,9 +117,38 @@ function About() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="visual-card">
-            <div className="visual-icon">🔬</div>
-            <h3>Tecnología de Precisión</h3>
-            <p>Equipos de medición láser y tallado digital para resultados perfectos</p>
+            <div className="carousel-container">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImage}
+                  src={images[currentImage]}
+                  alt={`Opticolors ${currentImage + 1}`}
+                  className="carousel-image"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </AnimatePresence>
+
+              <button className="carousel-btn prev" onClick={prevImage}>
+                ‹
+              </button>
+              <button className="carousel-btn next" onClick={nextImage}>
+                ›
+              </button>
+
+              <div className="carousel-dots">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`carousel-dot ${index === currentImage ? 'active' : ''}`}
+                    onClick={() => goToImage(index)}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
           <div className="visual-bg">
             <div className="floating-element element-1">👓</div>

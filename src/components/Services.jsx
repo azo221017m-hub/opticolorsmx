@@ -46,6 +46,13 @@ function Services() {
     }
   ]
 
+  const handleWhatsAppClick = (serviceTitle) => {
+    const phoneNumber = '5215515037150' // WhatsApp number (add 521 for Mexico format)
+    const message = `Hola, me gustaría obtener más información sobre: ${serviceTitle}`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -111,8 +118,9 @@ function Services() {
                 className="service-button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => handleWhatsAppClick(service.title)}
               >
-                Más Información
+                Me interesa
               </motion.button>
             </motion.div>
           ))}

@@ -171,6 +171,63 @@
   min-height: 120px;
 }
 
+.appointment-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.appointment-option {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border: 2px solid rgba(0, 102, 204, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8fbff;
+  position: relative;
+}
+
+.appointment-option:hover {
+  border-color: var(--primary-color);
+  background: rgba(0, 102, 204, 0.05);
+}
+
+.appointment-option.selected {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 163, 224, 0.1) 100%);
+  box-shadow: 0 2px 10px rgba(0, 102, 204, 0.15);
+}
+
+.appointment-option input[type="radio"] {
+  margin-right: 0.8rem;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.appointment-label {
+  font-weight: 500;
+  color: var(--dark-blue);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.appointment-option.selected .appointment-label {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.map-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .submit-button {
   padding: 1rem 2rem;
   background: var(--gradient-1);

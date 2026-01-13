@@ -27,9 +27,9 @@ function Hero({ scrollY }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Visión Clara,
+            Dedicados a
             <br />
-            <span className="highlight">Futuro Brillante</span>
+            <span className="highlight">tu salud visual.</span>
           </motion.h1>
 
           <motion.p
@@ -38,34 +38,11 @@ function Hero({ scrollY }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Laboratorio óptico de alta precisión con tecnología de vanguardia.
-            Expertos en lentes personalizados y tratamientos especializados.
+            Laboratorio óptico con tecnología de vanguardia,
+            <br /> ofreciendo calidad, rapidez, atención y servicio personalizado.
           </motion.p>
 
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <motion.button
-              className="primary-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Cotizar Ahora
-            </motion.button>
-            <motion.button
-              className="secondary-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Ver Servicios
-            </motion.button>
           </motion.div>
-        </motion.div>
 
         <motion.div
           className="hero-stats"
@@ -80,7 +57,7 @@ function Hero({ scrollY }) {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
             >
-              15+
+              17+
             </motion.div>
             <div className="stat-label">Años de Experiencia</div>
           </div>
@@ -91,9 +68,9 @@ function Hero({ scrollY }) {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 1.4 }}
             >
-              50K+
+              1 Hra.
             </motion.div>
-            <div className="stat-label">Clientes Satisfechos</div>
+            <div className="stat-label">Te entregamos tus lentes</div>
           </div>
           <div className="stat">
             <motion.div 
@@ -102,23 +79,15 @@ function Hero({ scrollY }) {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 1.6 }}
             >
-              99%
+              100%
             </motion.div>
-            <div className="stat-label">Precisión Garantizada</div>
+            <div className="stat-label">Trabajos Garantizados
+               </div>
           </div>
         </motion.div>
       </div>
 
-      <div className="scroll-indicator">
-        <motion.div
-          className="scroll-arrow"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          ↓
-        </motion.div>
-      </div>
-    </section>
+          </section>
   )
 }
 

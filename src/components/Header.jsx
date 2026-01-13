@@ -36,8 +36,10 @@ function Header() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <div className="logo-icon">👓</div>
-          <span className="logo-text">Opticolorsmx</span>
+          <div className="logo-icon">
+            <img src="/logoopticolors.svg" alt="Opticolors" />
+          </div>
+          <span className="logo-text">Opticolors</span>
         </motion.div>
 
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
