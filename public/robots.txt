@@ -1,0 +1,19 @@
+# robots.txt for Opticolorsmx
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://opticolorsmx.com/sitemap.xml
+
+# Disallow admin and private areas (if any in the future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all image crawling
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow all CSS and JS
+User-agent: Googlebot
+Allow: /*.css
+Allow: /*.js
