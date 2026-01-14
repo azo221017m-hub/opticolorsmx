@@ -8,7 +8,7 @@ function Services({ scrollY }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   
   // Calculate parallax offset for background
-  const parallaxOffset = scrollY ? scrollY * 0.3 : 0
+  const parallaxOffset = scrollY * 0.3
 
   const services = [
     {
