@@ -116,8 +116,10 @@ function Contact() {
               <h3>Síguenos</h3>
               <div className="social-icons">
                 <motion.a
-                  href="#"
+                  href="https://www.facebook.com/OPTICOLORSZO"
                   className="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
