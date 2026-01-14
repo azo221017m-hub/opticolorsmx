@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <Header />
       <Hero scrollY={scrollY} />
-      <Services />
+      <Services scrollY={scrollY} />
       <About />
       <Contact />
       <Footer />
