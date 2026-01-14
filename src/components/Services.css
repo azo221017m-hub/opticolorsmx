@@ -15,9 +15,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   will-change: transform;
-  transition: transform 0.1s ease-out;
   z-index: 0;
 }
 
