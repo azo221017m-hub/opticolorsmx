@@ -3,9 +3,12 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import './Services.css'
 
-function Services() {
+function Services({ scrollY }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  // Calculate parallax offset for background
+  const parallaxOffset = scrollY ? scrollY * 0.3 : 0
 
   const services = [
     {
@@ -76,6 +79,14 @@ function Services() {
 
   return (
     <section id="services" className="services" ref={ref}>
+      <div 
+        className="services-background" 
+        style={{ 
+          transform: `translateY(${parallaxOffset}px)`,
+        }}
+      >
+        <div className="services-overlay"></div>
+      </div>
       <div className="services-container">
         <motion.div
           className="services-header"
