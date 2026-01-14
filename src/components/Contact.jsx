@@ -124,31 +124,7 @@ function Contact() {
                   whileTap={{ scale: 0.9 }}
                 >
                   📘
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="social-icon"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  📷
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="social-icon"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  🐦
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="social-icon"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  💼
-                </motion.a>
+                </motion.a>             
               </div>
             </motion.div>
           </motion.div>
