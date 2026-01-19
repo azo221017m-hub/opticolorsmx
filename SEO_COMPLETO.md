@@ -129,30 +129,6 @@ Allow: /*.js
 
 ---
 
-### 5. Manifest.json (PWA)
-
-**Ubicación:** `/public/manifest.json`
-
-```json
-{
-  "name": "Opticolorsmx - Laboratorio Óptico",
-  "short_name": "Opticolorsmx",
-  "description": "Laboratorio óptico con más de 17 años...",
-  "theme_color": "#0066CC",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "categories": ["health", "medical", "lifestyle"],
-  "lang": "es-MX"
-}
-```
-
-**Beneficios:**
-- 📱 Instalable como PWA
-- 🎨 Tema personalizado
-- 🏷️ Categorización para app stores
-
----
-
 ## 📊 Keywords Principales Implementadas
 
 ### Keywords de Alto Valor
@@ -225,7 +201,6 @@ confianza..."
 - ✅ viewport meta tag
 - ✅ Diseño responsive
 - ✅ Touch-friendly buttons
-- ✅ PWA ready
 - ✅ Imágenes optimizadas
 
 ### Performance
@@ -432,6 +407,5 @@ Todas las implementaciones de SEO están activas y funcionando. El sitio está o
 - 📱 Redes Sociales (Open Graph)
 - 🤖 Crawlers (robots.txt, sitemap.xml)
 - 📊 Datos Estructurados (Schema.org)
-- 🌐 PWA (manifest.json)
 
 **Resultado esperado:** Mejora significativa en posicionamiento orgánico en 3-6 meses.

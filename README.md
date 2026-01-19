@@ -9,7 +9,6 @@ Landing page moderna y optimizada para SEO de Opticolorsmx, laboratorio óptico 
 - ✅ **Diseño Moderno** - Interfaz limpia y profesional
 - ✅ **SEO Optimizado** - Meta tags, Schema.org, Open Graph
 - ✅ **Responsive** - Adaptado a todos los dispositivos
-- ✅ **PWA Ready** - Instalable como aplicación
 - ✅ **Animaciones** - Transiciones suaves con Framer Motion
 - ✅ **WhatsApp Integration** - Contacto directo por WhatsApp
 - ✅ **Google Maps** - Ubicación integrada
@@ -63,7 +62,6 @@ opticolorsmx/
 │   ├── opticolorsimg1-5.jpeg   # Imágenes del carrusel
 │   ├── robots.txt              # SEO - Robots
 │   ├── sitemap.xml             # SEO - Sitemap
-│   ├── manifest.json           # PWA Manifest
 │   └── .htaccess               # Apache config
 ├── src/
 │   ├── components/
@@ -148,7 +146,6 @@ Todos los formularios y botones de "Más Información" envían mensajes a:
 ### Archivos
 - ✅ robots.txt
 - ✅ sitemap.xml
-- ✅ manifest.json (PWA)
 - ✅ .htaccess (Apache)
 
 ## 🌐 Información del Negocio
