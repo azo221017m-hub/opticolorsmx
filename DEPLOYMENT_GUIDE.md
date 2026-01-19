@@ -9,7 +9,6 @@
 ```
 ✅ /public/robots.txt
 ✅ /public/sitemap.xml
-✅ /public/manifest.json
 ✅ /public/.htaccess
 ✅ /index.html (meta tags completos)
 ```
@@ -462,7 +461,6 @@ Social & Schema
 ☐ Open Graph tags
 ☐ Twitter Cards
 ☐ Schema.org JSON-LD
-☐ Manifest.json
 ☐ Favicon configurado
 
 Tracking
