@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import './Contact.css'
+import lfbImage from '../assets/lfb.png'
 
 function Contact() {
   const ref = useRef(null)
@@ -123,7 +124,7 @@ function Contact() {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  📘
+                  <img src={lfbImage} alt="Facebook" className="social-icon-img" />
                 </motion.a>             
               </div>
             </motion.div>
