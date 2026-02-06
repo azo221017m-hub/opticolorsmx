@@ -116,7 +116,7 @@ function Contact() {
               <h3>Síguenos</h3>
               <div className="social-icons">
                 <motion.a
-                  href="https://www.facebook.com/opticolorsmx"
+                  href="https://www.facebook.com/OPTICOLORSZO/"
                   className="social-icon"
                   target="_blank"
                   rel="noopener noreferrer"
