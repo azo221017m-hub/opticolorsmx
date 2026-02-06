@@ -49,7 +49,7 @@ function Contact() {
       icon: '📞',
       title: 'Teléfono',
       info: '55 1503 7150',
-      detail: 'Lun - Vie: 9:00 - 18:00'
+      detail: 'Lunes a Sábado de 9:00 - 18:00 Hrs.'
     }
   ]
 
