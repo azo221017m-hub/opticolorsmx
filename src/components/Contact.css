@@ -95,11 +95,13 @@
   font-size: 1.1rem;
   color: var(--dark-blue);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .social-icons {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .social-icon {
@@ -119,6 +121,13 @@
 .social-icon:hover {
   background: var(--gradient-1);
   box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+.social-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .contact-form-wrapper {
