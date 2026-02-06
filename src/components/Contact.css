@@ -89,7 +89,6 @@
   border-radius: 15px;
   box-shadow: 0 2px 15px rgba(0, 102, 204, 0.08);
   border: 1px solid rgba(0, 102, 204, 0.1);
-  text-align: center;
 }
 
 .social-links h3 {
@@ -128,6 +127,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .contact-form-wrapper {
